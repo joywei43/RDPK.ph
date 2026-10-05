@@ -1,0 +1,20 @@
+RDPK.PH — GitHub Pages 上線與追蹤設定
+
+此網站以 rdpk.ph 作為正式網址。ZIP 內的 index.html、CNAME、sitemap.xml、robots.txt、tracking.js、style.css、app.js 和 assets 資料夾要全部放在儲存庫根目錄；不要把 ZIP 本身直接上傳，也不要再包在 dist 子資料夾。
+
+GitHub：
+1. 在 joywei43 帳戶建立新的 Public 儲存庫，例如 rdpk-ph；與 Everest 網站分開。
+2. 將本 ZIP 解壓後，所有檔案與 assets 資料夾上傳到 main 分支根目錄。
+3. 儲存庫 Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: main → Folder: /(root) → Save。
+4. 在同一頁 Custom domain 輸入 rdpk.ph 並 Save。包內 CNAME 已經設定 rdpk.ph。先在 GitHub 設定自訂網域，再改 DNS。
+5. 到網域供應商 DNS 設定，為主網域 @ 建立四筆 A 紀錄：185.199.108.153、185.199.109.153、185.199.110.153、185.199.111.153。若有停泊頁面預設 A 紀錄，請移除衝突者。
+6. 如要 www.rdpk.ph 也可用，建立 www CNAME 指向 joywei43.github.io（不要加儲存庫名稱）。GitHub 會把 www 導向 rdpk.ph。
+7. 等待 DNS 與憑證生效後，在 GitHub Pages 勾選 Enforce HTTPS。
+8. 建議先到 GitHub 帳戶 Settings → Pages 驗證 rdpk.ph，依畫面給出的 TXT 紀錄填入 DNS。這與 Google Search Console 的 TXT 紀錄是不同的值。
+
+Google：
+9. 在 GA4 建立 RDPK 專用資源與網站資料串流，取得 G- 開頭的 Measurement ID；將 tracking.js 的 RDPK_GA4_MEASUREMENT_ID = '' 填入你的值，再更新 GitHub。空白時網站不會送出追蹤資料。下載 App 與 Viber 點擊的事件名稱是 download_app_click 和 support_viber_click。
+10. 在 Google Search Console 建立網域資源 rdpk.ph，加入 Google 提供的 TXT DNS 紀錄，驗證後提交 https://rdpk.ph/sitemap.xml。
+
+檢查：https://rdpk.ph/、https://rdpk.ph/sitemap.xml、https://rdpk.ph/robots.txt。
+下載目標：https://web.zgsnni.com/13d67l。Viber 連結設定於 index.html。
